@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">E_Commerce_(Example)</string>
+
+    <string name="login">Hasaba girmek</string>
+    <string name="logout">Hasapdan çykmak</string>
+    <string name="register">Agza bolmak</string>
+    <string name="email">yedi_tilsim@gmail.com</string>
+    <string name="phone">65859954</string>
+    <string name="username">Ulanyjy ady</string>
+    <string name="copyright">Copyright © 2023</string>
+    <string name="during">Dowam et</string>
+    <string name="wishlist">Halanylanlar</string>
+    <string name="updet">Täzele</string>
+    <string name="home">Baş sahypa</string>
+    <string name="category">Kategoriýa</string>
+    <string name="orderlist">Sebet</string>
+    <string name="setting">Sazlamalar</string>
+    <string name="adress">Salgylar</string>
+    <string name="adress1">Aşgabat şäheri
+               B.Kerbabaýew köçesi 39 </string>
+    <string name="schedule">schedule</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="phone_number">61991271</string>
+    <string name="phone_number1">+99361991271</string>
+    <string name="phone_number2">+99361858901  /  +99365859954</string>
+    <string name="phone_id">+993</string>
+    <string name="phone_number_text">Telefon belgiňizi giriziň :</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">E-poçta</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_main_page">MainPageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="todo">TODO</string>
+    <string name="sign_in">Ulgama girmek</string>
+    <string name="create_account">Agza bolmak</string>
+    <string name="password">Açar sözi</string>
+    <string name="remember_me">Ýatda sakla</string>
+    <string name="forgot_password">Açar sözümi unutdym ?!</string>
+    <string name="or">salam</string>
+    <string name="no_account">hasaby yok</string>
+    <string name="number">Telefon belgi</string>
+    <string name="error">Ýalňyşlyk ýüze çykdy!</string>
+
+    <string name="job_success">Job Success</string>
+    <string name="ui_ux_designer">UI/UX Designer</string>
+    <string name="my_desc">Doing at the sweet spot between aesthetics and elegance to give life to your brand.My opinion belong to nobody but myself.</string>
+    <string name="about_me">About Me</string>
+    <string name="contact">Contact</string>
+    <string name="skills">Skills</string>
+    <string name="ratings">Star Ratings</string>
+    <string name="samplereview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium bibendum sapien, ut euismod massa. Duis convallis sem sed turpis elementum auctor.</string>
+    <string name="profile">Hoş geldiňiz</string>
+    <string name="lang">Dil</string>
+    <string name="likes">Halanylanlar</string>
+    <string name="orders">Sargytlar</string>
+    <string name="delivery">Eltip bermek we toleg</string>
+    <string name="about_us">Biz barada</string>
+    <string name="website">www.yedi_tilsim.com</string>
+    <string name="contact_me">Habarlaşmak</string>
+    <string name="Gozleg">Search</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="shanazar_arazgeldiyev">Shanazar Arazgeldiyev</string>
+    <string name="gmail">shanazararazgeldiyev@gmail.com</string>
+    <string name="profil">Profil</string>
+    <string name="todoo">TODO</string>
+    <string name="search">Gözleg</string>
+    <string name="action_cart">Sebet</string>
+    <string name="products">Harytlar</string>
+    <string name="retry">Gaytadan synanysyn</string>
+    <string name="account">Ulanyjy hasaby</string>
+    <string name="version_1_0_9">version:1.0.9</string>
+    <string name="_150_tmt">150 TMT</string>
+
+</resources>

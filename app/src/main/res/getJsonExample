@@ -1,0 +1,141 @@
+// call volley from this
+//        GetData getData = new GetData();
+//        getData.execute();
+
+
+
+
+
+
+
+//    public class GetData extends AsyncTask<String ,String ,String >{
+//
+//        @Override
+//        protected String doInBackground(String... strings) {
+//            String current = "";
+//            try {
+//                URL url;
+//                HttpURLConnection urlConnection = null;
+//                try {
+//                    url = new URL(urlll); //UrL + "category/all"
+//                    urlConnection = (HttpURLConnection) url.openConnection();
+//
+//                    InputStream inputStream = urlConnection.getInputStream();
+//                    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+//
+//                    int data = inputStreamReader.read();
+//                    while (data != -1) {
+//                        current += (char) data;
+//                        data = inputStreamReader.read();
+//                    }
+//                    return current;
+//
+//                } catch (MalformedURLException e) {
+//                    throw new RuntimeException(e);
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                } finally {
+//                    if (urlConnection != null) {
+//                        urlConnection.disconnect();
+//                    }
+//                }
+//
+//            } catch (RuntimeException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+//        protected void onPostExecute(String s){
+//            try {
+//                JSONObject jsonObject = new JSONObject(s);
+//                JSONArray jsonArray1 = jsonObject.getJSONArray("data");
+//                for (int i = 0 ; i < jsonArray1.length(); i++ ) {
+//                    JSONObject jsonObject1 = jsonArray1.getJSONObject(i);
+//                    Model_Category modelCategory = new Model_Category();
+//                    modelCategory.setName(jsonObject1.getString("name"));
+//                    modelCategories.add(modelCategory);
+//                }
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
+//    }
+
+
+
+
+//Another way AsyncTask
+
+//        new GetJsonData().execute();
+
+
+
+//    private class GetJsonData extends AsyncTask<Void, Void, Void> {
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            // before making http calls
+//        }
+//
+//        @Override
+//        protected Void doInBackground(Void... arg0) {
+//            String getUrl = urlll;
+//            try {
+//                URL url;
+//                HttpURLConnection urlConnection;
+//                url = new URL(getUrl);
+//                urlConnection = (HttpURLConnection) url.openConnection();
+//                urlConnection.setRequestMethod("GET");
+//                urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
+//                StringBuilder response = new StringBuilder();   //  this is also declared like => StringBuffer response = new StringBuffer();
+//                int responseCode = urlConnection.getResponseCode();
+//                if (responseCode == HttpURLConnection.HTTP_OK) { //success
+//                    BufferedReader inUrl = new BufferedReader(new InputStreamReader(
+//                            urlConnection.getInputStream()));
+//                    String inputLine;
+//                    while ((inputLine = inUrl.readLine()) != null) {
+//                        response.append(inputLine);
+//                    }
+//                    inUrl.close();
+//                } else {
+//                    Log.i("test", "POST request not worked.");
+//                }
+//                final_result = response.toString();
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void result) {
+//            super.onPostExecute(result);
+//            try {
+//                if (final_result != null) {
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                        parseJson(final_result);
+//                    }
+//                } else {
+//                    Log.e("NO INTERNET => ", "NO RESPONSE");
+//                }
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//            PutDataIntoRecycleview(modelCategories);
+//        }
+//
+//        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+//        void parseJson(String json) throws JSONException {
+//            JSONObject jsonObject = new JSONObject(json);
+//            JSONArray jsonArray1 = jsonObject.getJSONArray("data");
+//            for (int i = 0 ; i < jsonArray1.length(); i++ ) {
+//                JSONObject jsonObject1 = jsonArray1.getJSONObject(i);
+//                Model_Category modelCategory = new Model_Category();
+//                modelCategory.setName(jsonObject1.getString("name"));
+//                modelCategories.add(modelCategory);
+//            }
+//
+//        }
+//    }

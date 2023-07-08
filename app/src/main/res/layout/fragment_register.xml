@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Fragments.fragment_login">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:startIconDrawable="@drawable/ic_account"
+            app:startIconTint="@color/gr_top"
+            app:boxStrokeColor="@color/gr_top"
+            android:textColorHint="@color/gr_top"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/gr_top"
+                android:id="@+id/username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:startIconDrawable="@drawable/ic_account"
+            app:startIconTint="@color/gr_top"
+            app:boxStrokeColor="@color/gr_top"
+            android:textColorHint="@color/gr_top"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/gr_top"
+                android:id="@+id/email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:startIconDrawable="@drawable/ic_call"
+            app:startIconTint="@color/gr_top"
+            app:boxStrokeColor="@color/gr_top"
+            android:textColorHint="@color/gr_top"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/gr_top"
+                android:id="@+id/phoneee"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/number"
+                android:maxLength="8"
+                android:inputType="phone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/gr_top"
+            app:startIconDrawable="@drawable/ic_key"
+            app:startIconTint="@color/gr_top"
+            app:boxStrokeColor="@color/gr_top"
+            android:textColorHint="@color/gr_top"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/gr_top"
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/loginn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="@color/gr_top"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/always_white"
+                android:id="@+id/register2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textSize="@dimen/_12sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1.0"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/gr_top" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
