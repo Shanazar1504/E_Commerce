@@ -12,6 +12,8 @@ public class PrefConfig {
     private static final String PREF_EMAIL_KEY = "pref_email_key";
     private static final String PREF_IP_KEY = "pref_ip_key";
     private static final String PREF_PORT_KEY = "pref_port_key";
+    private static final String PREF_TOKEN_KEY = "pref_token_key";
+    private static final String PREF_CATDET_KEY = "pref_catdet_key";
 
 
     public static void saveIpPref(Context context, String ip) {
@@ -22,7 +24,7 @@ public class PrefConfig {
     }
     public static String loadIpPref(Context context) {
         SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return pref.getString(PREF_IP_KEY, "http://192.168.0.103:8091/");
+        return pref.getString(PREF_IP_KEY, "http://192.168.0.107");
     }
 
     // for PORT
@@ -34,7 +36,7 @@ public class PrefConfig {
     }
     public static String loadPORTPref(Context context) {
         SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return pref.getString(PREF_PORT_KEY, "8099");
+        return pref.getString(PREF_PORT_KEY, ":8091/");
     }
 
 
@@ -99,5 +101,30 @@ public class PrefConfig {
     public static String loadEmail(Context context) {
         SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
         return pref.getString(PREF_EMAIL_KEY, "");
+    }
+
+    public static void saveToken(Context context, String token) {
+        SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(PREF_TOKEN_KEY, token);
+        editor.apply();
+    }
+
+    public static String loadToken(Context context) {
+        SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return pref.getString(PREF_TOKEN_KEY, "");
+    }
+
+    public static int saveId_catDet(Context context, int catDet) {
+        SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(PREF_CATDET_KEY, String.valueOf(catDet));
+        editor.apply();
+        return catDet;
+    }
+
+    public static String loadCatDet(Context context) {
+        SharedPreferences pref = context.getSharedPreferences(MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return pref.getString(PREF_CATDET_KEY, "");
     }
 }

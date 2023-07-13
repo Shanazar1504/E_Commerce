@@ -102,5 +102,13 @@
     <string name="account">Ulanyjy hasaby</string>
     <string name="version_1_0_9">version:1.0.9</string>
     <string name="_150_tmt">150 TMT</string>
+    <string name="aksiya">Arzanladyşlar</string>
+    <string name="add_product">Sebede goş</string>
+    <string name="description">Turkiyanin yokary hilli kofesi </string>
+    <string name="no_internet_connection">Internet baglanyshygy yok</string>
+    <string name="str_ip">192.168.43.1</string>
+    <string name="_20">-20%</string>
+    <string name="_120_tmt">120 TMT</string>
+    <string name="empty">Haryt tapylmady</string>
 
 </resources>

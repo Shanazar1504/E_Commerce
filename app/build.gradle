@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:annotations:4.14.2'
     implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.makeramen:roundedimageview'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'

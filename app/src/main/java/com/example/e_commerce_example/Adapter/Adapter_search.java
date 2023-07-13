@@ -11,44 +11,34 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.e_commerce_example.Activities.Activity_wishlist;
-import com.example.e_commerce_example.Activities.Main_Page;
 import com.example.e_commerce_example.Activities.Product_details;
-import com.example.e_commerce_example.Fragments.fragment_home;
-import com.example.e_commerce_example.Fragments.fragment_login;
-import com.example.e_commerce_example.Fragments.fragment_wishlist;
-import com.example.e_commerce_example.Models.Model_Category;
 import com.example.e_commerce_example.Models.Model_Products;
+import com.example.e_commerce_example.Models.Model_Search;
 import com.example.e_commerce_example.R;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter_products extends RecyclerView.Adapter<Adapter_products.ViewHolder> {
+public class Adapter_search extends RecyclerView.Adapter<Adapter_search.ViewHolder> {
 
-    private List<Model_Products> productsList;
-    private Adapter_products adapterProducts;
+    private List<Model_Search> searchList;
+    private Adapter_search adapterProducts;
     private final Context context;
 
 
 
-    public Adapter_products(Context context, List<Model_Products>productsList) {
-        this.productsList = productsList;
+    public Adapter_search(Context context, List<Model_Search>searchList) {
+        this.searchList = searchList;
         this.context = context;
 
     }
 
     @NonNull
     @Override
-    public Adapter_products.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Adapter_search.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_products, parent, false);
         return new ViewHolder(inflate);
 
@@ -56,21 +46,20 @@ public class Adapter_products extends RecyclerView.Adapter<Adapter_products.View
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull Adapter_products.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Adapter_search.ViewHolder holder, int position) {
 
-
-        holder.name.setText(productsList.get(position).getName());
-        holder.price.setText(productsList.get(position).getPrice() + " TMT");
+        holder.name.setText(searchList.get(position).getName());
+        holder.price.setText(searchList.get(position).getPrice() + " TMT");
         Picasso
                 .get()
-                .load(productsList.get(position).getImg_url())
+                .load(searchList.get(position).getImg_url())
                 .into(holder.img);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, Product_details.class);
-                i.putExtra("id", productsList.get(position).getId());
+                i.putExtra("id", searchList.get(position).getId());
 //                i.putExtra("description", productsList.get(position).getDescription());
 //                i.putExtra("price", productsList.get(position).getPrice());
 //                i.putExtra("img_url", productsList.get(position).getImg_url());
@@ -82,10 +71,10 @@ public class Adapter_products extends RecyclerView.Adapter<Adapter_products.View
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, Activity_wishlist.class);
-                i.putExtra("name", productsList.get(position).getName());
-                i.putExtra("description", productsList.get(position).getDescription());
-                i.putExtra("price", productsList.get(position).getPrice());
-                i.putExtra("img_url", productsList.get(position).getImg_url());
+                i.putExtra("id", searchList.get(position).getId());
+//                i.putExtra("description", searchList.get(position).getDescription());
+//                i.putExtra("price", searchList.get(position).getPrice());
+//                i.putExtra("img_url", searchList.get(position).getImg_url());
 //                context.startActivity(i);
             }
         });
@@ -93,7 +82,7 @@ public class Adapter_products extends RecyclerView.Adapter<Adapter_products.View
 
     @Override
     public int getItemCount() {
-        return productsList.size();
+        return searchList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

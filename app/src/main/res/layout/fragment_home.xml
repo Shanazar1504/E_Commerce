@@ -69,45 +69,32 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/category"
+                            android:text="@string/aksiya"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             />
 
                     </LinearLayout>
 
-                    <LinearLayout
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        tools:ignore="ScrollViewSize">
 
-                        <HorizontalScrollView
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycle_aksiya"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:padding="@dimen/_5sdp">
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:scrollbars="horizontal"/>
 
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:padding="@dimen/_5sdp"
-                                android:orientation="horizontal">
-
-
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/recycle_category"
-                                    android:orientation="horizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"/>
-
-                            </LinearLayout>
-
-                        </HorizontalScrollView>
-
-
-                    </LinearLayout>
 
 
 

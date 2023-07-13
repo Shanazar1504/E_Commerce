@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/products_view"
+    android:id="@+id/cat_details_products_view"
     android:layout_width="@dimen/_135sdp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_5sdp"
@@ -10,7 +10,7 @@
     card_view:cardCornerRadius="@dimen/_10sdp">
 
     <ImageView
-        android:id="@+id/add_wishlist"
+        android:id="@+id/cat_add_wishlist"
         android:layout_width="@dimen/_20sdp"
         android:layout_height="@dimen/_20sdp"
         android:src="@drawable/heart"
@@ -20,7 +20,7 @@
         android:layout_marginTop="@dimen/_5sdp"/>
 
     <LinearLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/cat_relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -28,7 +28,7 @@
         android:layout_gravity="center_horizontal">
 
         <ImageView
-            android:id="@+id/img_products"
+            android:id="@+id/cat_img_products"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
             android:layout_gravity="center_horizontal"
@@ -36,7 +36,7 @@
             android:src="@drawable/pers"
             />
         <TextView
-            android:id="@+id/price_products"
+            android:id="@+id/cat_price_products"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_150_tmt"
@@ -50,7 +50,7 @@
 
 
         <TextView
-            android:id="@+id/name_products"
+            android:id="@+id/cat_name_products"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/category"
@@ -70,7 +70,7 @@
             android:layout_marginBottom="@dimen/_5sdp">
 
             <Button
-                android:id="@+id/add_cart"
+                android:id="@+id/cat_add_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/add_product"
@@ -80,11 +80,5 @@
 
 
         </LinearLayout>
-
-
-
-
-
-
     </LinearLayout>
 </androidx.cardview.widget.CardView>

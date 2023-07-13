@@ -1,18 +1,14 @@
-package com.example.e_commerce_example.Fragments;
+package com.example.e_commerce_example.Activities;
 
-import static android.content.Intent.getIntent;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,32 +28,32 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fragment_orderlist extends Fragment {
+public class Activity_Category_Details extends AppCompatActivity {
 
     private List<Model_cat_details> model_cat_detailsList = new ArrayList<>();
-    String UrL, Id,Id_catDet;
+    String UrL, Id, Id_catDet, Port;
     RecyclerView recyclerViewCat_Details;
 
-    public fragment_orderlist() {
-        // Required empty public constructor
-    }
-
     @SuppressLint("MissingInflatedId")
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_orderlist, container, false);
-//        recyclerViewCat_Details = (RecyclerView) view.findViewById(R.id.recycle_category_details);
-//        Id = getIntent().getStringExtra("id");
-//        UrL = PrefConfig.loadIpPref(getContext());
-//        Id_catDet = "category/get-by-category-id/";
-//        getData_cat_Det_Products();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_category_details);
 
-        return view;
+        Intent intent = getIntent();
+//        String name  = getIntent().getExtras().getString("name");
+        Id  = getIntent().getExtras().getString("id");
+//        String img_url  = getIntent().getExtras().getString("img_url");
+
+        recyclerViewCat_Details = (RecyclerView)findViewById(R.id.recycle_category_details);
+        UrL = PrefConfig.loadIpPref(this);
+        Port = PrefConfig.loadPORTPref(this);
+        Id_catDet = "category/get-by-category-id/";
+        getData_cat_Det_Products();
     }
 
     private void getData_cat_Det_Products() {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, UrL + Id_catDet + Id,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, UrL + Port + Id_catDet + Id,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -97,7 +93,7 @@ public class fragment_orderlist extends Fragment {
                     }
                 });
         //creating a request queue
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
         //adding the string request to request queue
         requestQueue.add(stringRequest);
 
@@ -105,15 +101,10 @@ public class fragment_orderlist extends Fragment {
 
     private void PutDataIntoRecyc_cat_details(List<Model_cat_details> model_cat_detailsList) {
 
-        Adapter_cat_details adapter_cat_details = new Adapter_cat_details(getContext(), model_cat_detailsList );
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
+        Adapter_cat_details adapter_cat_details = new Adapter_cat_details(this, model_cat_detailsList );
+        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerViewCat_Details.setLayoutManager(layoutManager);
         recyclerViewCat_Details.setAdapter(adapter_cat_details);
 
     }
-
-    private Intent getIntent() {
-        return null;
-    }
 }
-

@@ -23,9 +23,8 @@
             android:layout_height="@dimen/_55sdp"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@null"
-            android:src="@drawable/cartt"
-            android:layout_marginStart="@dimen/_15sdp"
-            card_view:tint="@color/gr_top" />
+            android:src="@drawable/pers"
+            android:layout_marginStart="@dimen/_15sdp"/>
 
         <TextView
             android:id="@+id/name_category"

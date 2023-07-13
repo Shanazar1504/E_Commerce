@@ -1,16 +1,15 @@
 package com.example.e_commerce_example.Models;
 
-public class Model_Products {
+public class Model_Whishlist {
 
     private String id;
     private String name;
     private String img_url;
     private String price;
     private String description;
-    private int isFavourite;
 
 
-    public Model_Products() {
+    public Model_Whishlist() {
         this.name = this.name;
         this.id = id;
         this.price = this.price;
@@ -50,13 +49,6 @@ public class Model_Products {
     }
     public void setImg_url(String img_url) {
         this.img_url = img_url;
-    }
-
-    public int isFavourite() {
-        return isFavourite;
-    }
-    public void setIsFavourite(boolean isFavourite) {
-        this.isFavourite = isFavourite ? 1 : 0;
     }
 
 }

@@ -17,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.e_commerce_example.Models.Model_Category;
 import com.example.e_commerce_example.R;
 import com.example.e_commerce_example.Storage.PrefConfig;
 import com.example.e_commerce_example.databinding.FragmentLoginBinding;
@@ -34,7 +35,7 @@ public class fragment_login extends Fragment {
     private Context context;
     private FragmentLoginBinding binding;
 
-    private String URL;
+    private String URL, token, Port;
 
     JSONObject obj = new JSONObject();
 
@@ -67,6 +68,8 @@ public class fragment_login extends Fragment {
             throw new RuntimeException(e);
         }
         URL = PrefConfig.loadIpPref(context);
+        token = PrefConfig.loadToken(context);
+        Port = PrefConfig.loadPORTPref(context);
         return binding.getRoot();
     }
 
@@ -90,10 +93,16 @@ public class fragment_login extends Fragment {
                     throw new RuntimeException(e);
                 }
                 RequestQueue queue = Volley.newRequestQueue(getContext());
-                JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, URL + "user/login", obj,
+                JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, URL + Port + "user/login", obj,
                         response -> {
-                            System.out.println(response);
-                            Log.e("JSON OBJECT", "RESPONSE => " + response);
+                            try {
+                                JSONObject jsonObject = new JSONObject(response.toString());
+                                JSONObject token = jsonObject.getJSONObject("access_token");
+                                PrefConfig.saveToken(context, token.toString());
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         },
                         error -> Log.e("JSON OBJECT", "ERROR => " + error));
                 queue.add(jsObjRequest);

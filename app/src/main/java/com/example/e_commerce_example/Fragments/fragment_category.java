@@ -17,10 +17,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.e_commerce_example.Adapter.Adapter_category;
+import com.example.e_commerce_example.Models.Model_Aksiya;
 import com.example.e_commerce_example.Models.Model_Category;
+import com.example.e_commerce_example.Models.Model_Products;
 import com.example.e_commerce_example.R;
 import com.example.e_commerce_example.Storage.PrefConfig;
 
@@ -46,8 +51,9 @@ public class fragment_category extends Fragment {
     JSONObject obj = new JSONObject();
 
     private String UrL;
+    private String Port;
     private String final_result;
-    private static final String urlll = "http://run.mocky.io/v3/8ba54e21-ff12-4dee-b1c9-b601e38274cb";
+//    private static final String urlll = "http://run.mocky.io/v3/8ba54e21-ff12-4dee-b1c9-b601e38274cb";
     private String json;
 
 
@@ -66,6 +72,7 @@ public class fragment_category extends Fragment {
         modelCategories = new ArrayList<>();
 
         UrL = PrefConfig.loadIpPref(getContext());
+        Port = PrefConfig.loadPORTPref(getContext());
 
         getData();
 
@@ -73,28 +80,42 @@ public class fragment_category extends Fragment {
     }
 
     private void getData() {
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, urlll, obj,
-                response -> {
-                    System.out.println(response);
-                    Log.e("JSON OBJECT", "RESPONSE => " + response);
-                    try {
-                        JSONArray jsonArray1 = response.getJSONArray("data");
-                        for (int i = 0 ; i < jsonArray1.length(); i++ ) {
-                            JSONObject jsonObject1 = jsonArray1.getJSONObject(i);
-                            Model_Category modelCategory = new Model_Category();
-                            modelCategory.setName(jsonObject1.getString("name"));
-                            modelCategories.add(modelCategory);
-                        }
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, UrL + Port + "category/all",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
 
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
+                        System.out.println(response);
+
+                        try {
+                            JSONArray jsonArray1 = new JSONArray(response);
+                            for (int i = 0 ; i < jsonArray1.length(); i++ ) {
+                                Model_Category modelCategory = new Model_Category();
+                                JSONObject jsonObject1 = jsonArray1.getJSONObject(i);
+                                modelCategory.setName(jsonObject1.getString("name"));
+                                modelCategory.setId(jsonObject1.getString("id"));
+                                String imgurl = jsonObject1.getString("img_url");
+                                modelCategory.setImg_url(imgurl);
+                                modelCategories.add(modelCategory);
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        PutDataIntoRecycleview(modelCategories);
                     }
-                    PutDataIntoRecycleview(modelCategories);
 
                 },
-                error -> Log.e("JSON OBJECT", "ERROR => " + error));
-        queue.add(jsObjRequest);
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    }
+                });
+        //creating a request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        //adding the string request to request queue
+        requestQueue.add(stringRequest);
+
     }
 
 

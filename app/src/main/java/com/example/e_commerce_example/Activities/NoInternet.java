@@ -14,7 +14,7 @@ public class NoInternet {
     private Context context;
     private NoInternetBinding noInternetBinding;
 
-    public NoInternet(RelativeLayout view, int id, Context context) {
+    public NoInternet(Context context) {
         this.view = view;
         this.context = context;
         this.id=id;
@@ -28,7 +28,7 @@ public class NoInternet {
     public void showError(){
         try{
             view.findViewById(id).setVisibility(View.GONE);
-            view.addView(noInternetBinding.getRoot(), RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+            view.addView(noInternetBinding.getRoot());
         } catch (Exception ex){
             ex.printStackTrace();
         }

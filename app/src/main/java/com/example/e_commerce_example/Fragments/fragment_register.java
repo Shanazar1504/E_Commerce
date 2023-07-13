@@ -33,7 +33,7 @@ public class fragment_register extends Fragment {
     private Context context;
     private FragmentRegisterBinding binding;
 
-    private String URL;
+    private String URL, Port;
 
     JSONObject obj = new JSONObject();
 
@@ -61,6 +61,7 @@ public class fragment_register extends Fragment {
         binding = FragmentRegisterBinding.inflate(inflater,container,false);
         setListener();
         URL = PrefConfig.loadIpPref(context);
+        Port = PrefConfig.loadPORTPref(context);
         return binding.getRoot();
     }
 
@@ -72,6 +73,8 @@ public class fragment_register extends Fragment {
 
                 int getti = Integer.parseInt(Objects.requireNonNull(binding.phoneee.getText()).toString());
 
+//                PrefConfig.saveUser(binding.username.getText().toString());
+//                PrefConfig.saveEmail(binding.email.getText().toString());
 
                 if (binding.username.getText().toString().isEmpty() || binding.email.getText().toString().isEmpty() || binding.password.getText().toString().isEmpty() || binding.phoneee.getText().toString().isEmpty()) {
                     binding.username.setError("Empty");
@@ -87,11 +90,13 @@ public class fragment_register extends Fragment {
                     binding.email.getText().clear();
                     binding.password.getText().clear();
                     binding.phoneee.getText().clear();
+                    PrefConfig.saveUser(getContext(), binding.username.getText().toString());
+                    PrefConfig.saveEmail(getContext(), binding.email.getText().toString());
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
                 RequestQueue queue = Volley.newRequestQueue(getContext());
-                JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, URL + "user/register", obj,
+                JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, URL + Port + "user/register", obj,
                         response -> {
                             System.out.println(response);
                             Log.e("JSON OBJECT", "RESPONSE => " + response);

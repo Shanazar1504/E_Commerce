@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/products_view"
+    android:id="@+id/aksiya_view"
     android:layout_width="@dimen/_135sdp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_5sdp"
@@ -19,6 +19,27 @@
         android:elevation="@dimen/_2sdp"
         android:layout_marginTop="@dimen/_5sdp"/>
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:elevation="@dimen/_5sdp"
+        android:background="@drawable/skidka">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_20"
+            android:textStyle="italic"
+            android:elevation="@dimen/_5sdp"
+            android:textSize="@dimen/_8sdp"
+            android:textColor="@color/white"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
@@ -35,18 +56,40 @@
             android:contentDescription="@null"
             android:src="@drawable/pers"
             />
-        <TextView
-            android:id="@+id/price_products"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/_150_tmt"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:textAlignment="center"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:textSize="@dimen/_10sdp"
-            android:textColor="@color/gr_top"
-            android:textStyle="bold"
-            />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/price_aksiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_120_tmt"
+                android:textAlignment="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/gr_top"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/price_products"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_150_tmt"
+                android:textAlignment="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/red"
+                android:textStyle="normal"
+                />
+
+
+
+        </LinearLayout>
 
 
         <TextView

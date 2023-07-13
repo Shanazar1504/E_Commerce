@@ -84,7 +84,19 @@ public class fragment_drawer extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new fragment_settings();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.mainfragment, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+
         lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

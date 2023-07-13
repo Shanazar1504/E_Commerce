@@ -1,6 +1,6 @@
 package com.example.e_commerce_example.Models;
 
-public class Model_Products {
+public class Model_Search {
 
     private String id;
     private String name;
@@ -10,7 +10,7 @@ public class Model_Products {
     private int isFavourite;
 
 
-    public Model_Products() {
+    public Model_Search() {
         this.name = this.name;
         this.id = id;
         this.price = this.price;

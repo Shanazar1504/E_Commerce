@@ -4,14 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.fragment_orderlist"
+    tools:context=".Fragments.fragment_settings"
     android:background="@color/white">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle_orderlists"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+    <EditText
+        android:id="@+id/inputIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:ems="8"
+        android:hint="@string/str_ip"
+        android:text=""
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textColorHint="#717171"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/done"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignTop="@+id/inputIp"
+        android:layout_alignBottom="@+id/inputIp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/inputIp"
+        android:clickable="true"
+        android:src="@drawable/baseline_done_all_24"
+        android:tint="@color/gr_top"
+        app:layout_constraintBottom_toBottomOf="@+id/inputIp"
+        app:layout_constraintStart_toEndOf="@+id/inputIp"
+        app:layout_constraintTop_toTopOf="@+id/inputIp"
+        tools:ignore="UseAppTint"
+        android:focusable="true" />
 
 </RelativeLayout>

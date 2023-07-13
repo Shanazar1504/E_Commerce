@@ -40,9 +40,36 @@
                 app:contentInsetEnd="0dp"
                 tools:ignore="BottomAppBar">
 
-                <androidx.appcompat.widget.SearchView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/search"
+                    android:transitionName="search"
+                    android:layout_width="@dimen/_215sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    app:strokeWidth="@dimen/_1sdp"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:strokeColor="@color/gr_top"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/search"
+                        android:inputType="textAutoComplete"
+                        android:lineBreakStyle="none"
+                        android:textSize="@dimen/_13sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:drawableTint="@color/gray_600"
+                        android:textColor="@color/gray_600"
+                        android:drawableEnd="@drawable/baseline_search_24"
+
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
 
 
             </com.google.android.material.bottomappbar.BottomAppBar>
@@ -52,7 +79,7 @@
                 android:name="com.example.e_commerce_example.Fragments.fragment_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/_35sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
                 android:layout_below="@+id/appbar"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -70,9 +97,9 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:layout_gravity="bottom"
-            app:itemActiveIndicatorStyle="@color/white"
             android:theme="@style/Theme.E_Commerce_Example"
-            app:elevation="10dp"
+            app:elevation="@dimen/_10sdp"
+            app:itemActiveIndicatorStyle="@color/white"
             app:itemIconTint="@color/gr_top"
             app:itemTextColor="@color/gr_top"
             app:layout_constraintBottom_toBottomOf="parent"

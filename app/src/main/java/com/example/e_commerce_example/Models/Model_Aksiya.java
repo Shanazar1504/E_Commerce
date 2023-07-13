@@ -1,19 +1,20 @@
 package com.example.e_commerce_example.Models;
 
-public class Model_Products {
+public class Model_Aksiya {
 
     private String id;
     private String name;
     private String img_url;
     private String price;
+    private String percent;
     private String description;
-    private int isFavourite;
 
 
-    public Model_Products() {
+    public Model_Aksiya() {
         this.name = this.name;
         this.id = id;
         this.price = this.price;
+        this.percent = this.percent;
         this.description = description;
         this.img_url = this.img_url;
 
@@ -28,6 +29,9 @@ public class Model_Products {
     }
     public String getPrice() {
         return price;
+    }
+    public String getPercent() {
+        return percent;
     }
     public String getDescription() {
         return description;
@@ -48,15 +52,11 @@ public class Model_Products {
     public void setPrice(String price) {
         this.price = price;
     }
+    public void setPercent(String percent) {
+        this.percent = percent;
+    }
     public void setImg_url(String img_url) {
         this.img_url = img_url;
-    }
-
-    public int isFavourite() {
-        return isFavourite;
-    }
-    public void setIsFavourite(boolean isFavourite) {
-        this.isFavourite = isFavourite ? 1 : 0;
     }
 
 }

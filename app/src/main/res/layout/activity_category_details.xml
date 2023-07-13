@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.fragment_orderlist"
-    android:background="@color/white">
+    tools:context=".Activities.Activity_Category_Details">
 
-
-        <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle_orderlists"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_category_details"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
